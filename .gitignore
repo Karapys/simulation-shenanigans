@@ -3,3 +3,18 @@
 ################################################################################
 
 /.vs
+*.iobj
+*.ipdb
+*.pdb
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.filters
+*.user
+
+/Debug
+/simulation-shenanigans/x64/Release
+/simulation-shenanigans/Release
+/Release
+/x64/Debug
