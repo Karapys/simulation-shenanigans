@@ -13,7 +13,7 @@ Menu::Menu() {
 
 bool Menu::OnUserCreate() {
 	sim_to_launch = -1;
-	std::string description[num_of_buttons] = { "Start boids simulator", "Start gravity simulator", "Start game of live" };
+	std::string description[num_of_buttons] = { "Start boids simulator", "Start gravity simulator", "Start game of live"};  //"Start tension simulator"
 	for (int i = 0; i < num_of_buttons; i++) {
 		menu_buttons[i] = new Button(
 			olc::vi2d(ScreenWidth() / 2 - GetTextSize(description[i]).x, (ScreenHeight() - 100) / 2 + i * 40),
@@ -51,6 +51,8 @@ int main()
 {
 	Menu menu;
 
+	// WARNING! Big crutch
+
 	auto create_boids_sim = [&]() {
 		BoidsSim boids;
 		int window_size = 800;
@@ -73,6 +75,13 @@ int main()
 			game_of_live.Start();
 	};
 
+	/*auto create_tension_sim = [&]() {
+		TensionSim tension_sim;
+		int window_size = 800;
+		if (tension_sim.Construct(window_size, window_size, 800 / window_size, 800 / window_size))
+			tension_sim.Start();
+	};*/
+
 	// Not working :(
 
 	
@@ -86,5 +95,7 @@ int main()
 		create_gravity_sim();
 	if (sim_to_launch == 2)
 		create_game_of_live_sim();
+	/*if (sim_to_launch == 3)
+		create_tension_sim();*/
 	return 0;
 }

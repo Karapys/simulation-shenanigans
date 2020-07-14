@@ -22,6 +22,13 @@ public:
 	bool OnUserUpdate(float fElapsedTime) override;
 };
 
+class TensionSim : public olc::PixelGameEngine {
+public:
+	TensionSim();
+	bool OnUserCreate() override;
+	bool OnUserUpdate(float fElapsedTime) override;
+};
+
 class Menu : public olc::PixelGameEngine {
 public:
 	Menu();
